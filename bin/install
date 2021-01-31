@@ -48,7 +48,7 @@ install_direnv() {
   (
     echo "∗ Downloading and installing direnv..."
     mkdir -p "${install_path}/bin"
-    curl --silent --location --create-dirs --output "$source_path" "$download_url" || fail "Could not download"
+    curl -fsSL --create-dirs --output "$source_path" "$download_url" || fail "Could not download"
     chmod +x "${install_path}/bin/direnv" || fail "Could not set executable bit on binary"
     echo "The installation was successful!"
   ) || (
